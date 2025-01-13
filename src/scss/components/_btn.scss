@@ -1,0 +1,104 @@
+.download-list {
+    --gap: 4px;
+    --padding: 12px 0;
+    --mrgn-top: 16px;
+    --font-size: 14px;
+    --svg-size: 24px;
+    --color: #ffffff;
+    --color-h: #4268a6;
+    --color-a: #4268a6;
+    --tr: all 0.3s;
+    --f-f: 'Onest';
+    --text-pd-t: 2px;
+
+    display: flex;
+    gap: var(--gap);
+    padding: var(--padding);
+    margin-top: var(--mrgn-top);
+    transition: all var(--tr);
+    font-family: var(--f-f);
+    align-items: center;
+    width: fit-content;
+
+    & * {
+        transition: var(--tr);
+    }
+
+    svg {
+        width: var(--svg-size);
+        height: var(--svg-size);
+
+        [stroke] {
+            stroke: var(--color);
+        }
+
+        [fill] {
+            fill: var(--color);
+        }
+    }
+
+    span {
+        text-transform: uppercase;
+        font-size: var(--font-size);
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: 0%;
+        color: var(--color);
+        padding-top: var(--text-pd-t);
+    }
+
+    @media screen and (max-width: 1920px) {
+        --padding: 10.5px 0;
+        --mrgn-top: 12px;
+        --svg-size: 20px;
+        --font-size: 12px;
+        --text-pd-t: 1.5px;
+    }
+
+    @media screen and (max-width: 620px) {
+        --padding: 15px 0;
+        --mrgn-top: 0;
+        --font-size: 11px;
+        --svg-size: 16px;
+        --text-pd-t: 1.3px;
+
+        justify-content: center;
+        width: 100%;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            span {
+                color: var(--color-h);
+            }
+
+            svg {
+                [stroke] {
+                    stroke: var(--color-h);
+                }
+
+                [fill] {
+                    fill: var(--color-h);
+                }
+            }
+        }
+    }
+
+    &:active {
+        --color: var(var(--color-a));
+
+        span {
+            color: var(--color-a);
+        }
+
+        svg {
+            [stroke] {
+                stroke: var(--color-a);
+            }
+
+            [fill] {
+                fill: var(--color-a);
+            }
+        }
+    }
+}
