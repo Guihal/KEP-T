@@ -1,4 +1,4 @@
 import '../scss/main.scss'
-import { addBtn } from './utils/addBtn'
+import { addBtns } from './utils/addBtns'
 
-addBtn()
+document.addEventListener('DOMContentLoaded', addBtns)
